@@ -1,0 +1,32 @@
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1>วิธีการสั่งซื้อสินค้า</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <div>
+    <ng-container *ngFor="let item of data">
+      <div style="padding: 10px;" class="row">
+
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/buy/{{ item.image }}">
+        </div>
+
+        <div class="col-sm-9">
+          <h4>{{ item.detail }}</h4>
+        </div>
+
+      </div>
+      <hr>
+
+    </ng-container>
+  </div>
+
+
+
+</section>

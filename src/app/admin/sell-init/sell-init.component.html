@@ -1,0 +1,749 @@
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1>การสร้าง Link ของ Shop เพื่อใช้งานระบบ </h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+
+  <h4>เลือก Shop</h4>
+
+
+  <div class="input-group margin">
+    <div class="input-group-btn">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+        aria-expanded="false">{{ selected }}
+      </button>
+      <ul class="dropdown-menu">
+        <ng-container *ngFor="let item of listShop | keyvalue">
+          <li (click)="chooseShop(item.key)"><a class="dropdown-grey"> {{ item.key }} : {{ item.value }} </a></li>
+        </ng-container>
+      </ul>
+      <span style="padding: 5px;">
+        <button (click)="util.smartModal.getModal('addShopOnlineModal').open()">
+          <i class="fas fa-plus-square "></i>
+          Add
+        </button>
+      </span>
+      <br>
+
+
+
+
+
+    </div>
+  </div>
+
+
+
+  <div>
+    <div style="padding: 10px;text-align: center;">
+
+      <h4 style="text-align: center;"> ลิงค์สำหรับสร้าง Link ใน Liff ของ <br>
+        {{ selected === 'กรุณาเลือก Shop' ? '' :  selected }} </h4>
+      <div>
+        <h2 style="text-align: center;">Endpoint URL สำหรับ LIFF (แชร์สินค้ารายตัว)</h2>
+        <p style="color:grey;text-align: center;"> {{ url }}{{ idSelected }}&module=detail&liff=</p>
+      </div>
+    </div>
+
+  </div>
+
+  <ng-container *ngIf="selected !== 'กรุณาเลือก Shop'">
+
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <!-- <img class="img-responsive" src="../../../assets/img/buy/0.jpg"> -->
+        </div>
+        <div class="col-sm-9">
+          <h4>1. เข้าไปยัง <a target="_blank"
+              href="https://account.line.biz/login?scope=line&redirectUri=https%3A%2F%2Fdevelopers.line.biz%2Fconsole%2F">
+              ลงทะเบียน </a>
+          </h4>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/1.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/1.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>2. เลือก เข้าสู่ระบบด้วยบัญชี LINE
+          </h4>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/2.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/2.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>3. ทำการเข้าระบบด้วยบัญชี LINE (สามารถ เข้าสู่ระบบผ่าน QR Code ของ LINE ได้)
+          </h4>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/3.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/3.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>4. เลือก Create a new provider
+          </h4>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/4.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/4.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>5. ตั้งชื่อเป็น Remax แล้วกด Create
+          </h4>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/5.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/5.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>6. มาหน้าให้กดที่ Create a LINE Login channel
+          </h4>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/6.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/6.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>7. ตรง Channel icon ให้กด Register เพื่อทำการอัปรูปภาพ
+            (ภาพนี้จะไปแสดงเมื่อได้ทำการแชร์สินค้าไปยังแพลทฟอร์มต่าง ๆ )
+          </h4>
+          <img class="img-responsive" src="../../../assets/img/liff/ex1.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/ex1.jpg')">
+          <h5>เช่นตรงนี้</h5>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/7.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/7.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>8. ตรง Channel name ให้ใส่ชื่อของร้านตัวเอง (ความยามไม่เกิน 20 ตัวอักษร) <br>
+            ส่วนตรง Channel description ให้ใส่ Remax เข้าไป <br>
+            และตรง App types ให้เลือก Web app ตามในรูป
+          </h4>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/8.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/8.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>9. ตรง Email address ให่ใส่ อีเมลล์ ของช็อปหรือเจ้าของช็อปเข้าไป เพื่อรับแจ้งข่าวสารจากทางไลน์
+          </h4>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/9.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/9.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>10. ในส่วน Privacy policy URL , Terms of use URL สามารถข้ามไปได้ (ไม่ต้องใส่) <br>
+            เสร็จแล้วติ๊ก i have read and agree (สามารถไปอ่านรายละเอียดก่อนก็ได้) <br>
+            เสร็จแล้วให้กด Create เพื่อสร้าง LINE LOGIN นี้ขึ้นมา
+          </h4>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/10.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/10.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>11. เมื่อสร้างเสร็จแล้วจะมายังหน้านี้ ซึ่งจะมีแจ้งเตือนว่า Channel นี้ถูกสร้างมาแล้วนะ
+            แล้วจะขึ้นรูปที่เราพึ่งอัปโหลดไป <br>
+            พร้อมด้วย ชื่อ ที่พึ่งสร้างขึ้นมานั้นเอง
+          </h4>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/11.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/11.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>12. ทำการกดที่ Developing
+          </h4>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/12.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/12.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>13. จะขึ้นหน้าดังรูปขึ้นมา ให้เลือก Publish
+          </h4>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/13.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/13.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>14. ให้เลือกไปยังเมนู LIFF ตามรูป
+          </h4>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/14.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/14.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>15. ให้เลือก Add
+          </h4>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/15.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/15.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>16. จะมายังหน้าดังรูป
+          </h4>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/16.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/16.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>17. ให้กรอก Liff app name เป็นชื่อที่จะแสดงเมื่อ ช็อปได้ทำการแชร์สินค้า <br>
+            Size ให้เลือกเป็น Full <br>
+            Endpoint URL คืออันนี้ : <p style="color:grey">
+              {{ url }}{{ idSelected }}&module=detail&liff=</p> <br>
+            เอาไปใส่นะ
+          </h4>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/17.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/17.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>18. เลือก Profile , Openid , กด View All จะมี Chat_message.write ให้เลือก <br>
+            ส่วน Bot link feature ให้เลือกเป็น On (Normal)
+          </h4>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/18.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/18.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>19. เสร็จแล้วให้กดที่ Add
+          </h4>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/19.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/19.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>20. จะเห็นว่า LIFF ได้ถูกสร้างขึ้นมาแล้ว ให้กดไปที่ LIFF ที่เราสร้างขึ้นตามภาพ
+          </h4>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/20.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/20.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>21. ตรงเส้นใต้แรกสุด จะเป็นค่า LIFF ID <br>
+            ให้ทำการกด Edit ตรง Endpoint URL แล้วทำการนำ LIFF ID มาต่อท้าย ดังรูป
+          </h4>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/21.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/21.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>22. เสร็จแล้วจะได้ ตามรูปนี้นะ <br>
+            เสร็จแล้วกดที่ Update
+          </h4>
+          <br>
+          <h3 style="color: red;">*** ตรงนี้สำคัญมาก ตรวจสอบให้แน่ใจด้วยว่าทำถูกต้อง (ถ้าทำถูกแล้ว จะได้ดังภาพนี้ ) ***
+          </h3>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/22.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/22.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>23. เมื่อกด Back กลับมา <br>
+            จะเห็นว่า LIFF อันแรกเพิ่มเข้ามา (ใช้สำหรับแชร์สินค้า รายชิ้น)
+          </h4>
+
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/23.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/23.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>24. ทำการกดไปยัง Add <br>
+            เพื่อเพิ่ม Liff สำหรับแชร์สินค้า (ทุกตัว) <br>
+            ซึ่ง Liff ที่ได้นี้ จะนำไปใส่ที่ Rich menu ของช็อปแต่ละช็อป
+          </h4>
+
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/24.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/24.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>25. ให้กรอก Liff app name เป็นชื่อที่จะแสดงเมื่อ ช็อปได้ทำการแชร์สินค้า <br>
+            Size ให้เลือกเป็น Full <br>
+            Endpoint URL คืออันนี้ : <p style="color:grey">
+              {{ url }}{{ idSelected }}&module=product&liff=</p> <br>
+            เอาไปใส่นะ <br>
+            <p style="color: red;"> *** ต่อจากนี้จะทำเหมือนกัน เหมือนกับขั้นตอน 17 - 24 ที่เพิ่ม Liff <br>
+              จะต่างกันตรง Endpoint URL เปลี่ยนจาก module=detail ไปเป็น module=product
+            </p>
+          </h4>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/25.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/25.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>26. กดเลือก ตามรูป
+          </h4>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/26.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/26.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>27. เสร็จแล้วให้กด Add
+          </h4>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/27.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/27.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>28. จะเห็นว่ามี LIFF เพิ่มเข้ามาอีกอัน คือ Remax The mall BKP Product ให้กดเข้าไป
+          </h4>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/28.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/28.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>29. เมื่อกดเข้ามาแล้ว ให้นำ LIFF ID จากขีดเส้นใต้ข้างบน มาต่อที่ Endpoint URL ที่ขี้ไว้ข้างล่าง
+          </h4>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/29.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/29.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>30. เมื่อใส่แล้วจะได้ ดังรูปภาพนี้ <br>
+            <p>*** สำคัญนะ ใส่ตัวเลขให้ถูก </p>
+          </h4>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <div style="padding: 10px;" class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/30.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/30.jpg')">
+        </div>
+        <div class="col-sm-9">
+          <h4>31. เมื่อเสร็จแล้วจะได้ค่าข้างบนนี้มา <br>
+            <h4 style="color: red;">
+              *** ตรงนี้สำคัญ <br>
+              เราจะได้ Liff มา 2 Link โดยที่ <br>
+              Liff ที่เราทำมาครั้งแรกนั้น จะสำหรับ แชร์สินค้ารายชิ้น (จะมีช่องให้กรอกในขั้นตอนต่อไป) <br>
+              Liff อันที่ 2 ที่ได้นั้น จะสำหรับแชร์สินค้าทั้งหมด (เข้าไปยังหน้าแรกที่เห็นหน้าสินค้าทั้งหมด ) <br>
+
+            </h4> <br>
+
+            <h4 style="color: yellowgreen;">
+              จากนั้นให้ลองเข้าลิงค์ที่ได้ 2 ลิงค์แรก โดย <br>
+              <p style="color:brown;">
+                1. ให้ทำการเข้ายังลิงก์ แรก (ลิงค์สินค้ารายชิ้น) โดยต่อท้ายด้วย ?1220 <br>
+                จะได้ว่าเช่น <span style="color: black;"> https://liff.line.me/1654037683-gzNQ7N7V?1220 </span> <br>
+                <br>
+                2. ให้ทำการเข้ายังลิงก์ ที่2 (ลิงก์ สินค้า หรือลิงค์ที่ 2 ที่ได้สร้างขึ้น) ต่อท้ายด้วย ?1 <br>
+                จะได้ว่าเช่น <span style="color: black;"> https://liff.line.me/1654037683-3LbLBbB9?1</span>
+              </p>
+            </h4>
+            <!-- <p>*** สำคัญนะ ใส่ตัวเลขให้ถูก </p> -->
+          </h4>
+        </div>
+      </div>
+      <hr>
+    </ng-container>
+
+    <ng-container>
+      <h4> ถ้าลิงค์ที่สร้างมาถูกต้องแล้วสำหรับลิงค์แรก จะได้ดังรูป </h4>
+
+      <div class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/31.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/31.jpg')">
+
+          <img class="img-responsive" src="../../../assets/img/liff/32.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/32.jpg')">
+
+          <img class="img-responsive" src="../../../assets/img/liff/33.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/33.jpg')">
+
+          <img class="img-responsive" src="../../../assets/img/liff/34.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/34.jpg')">
+
+          <img class="img-responsive" src="../../../assets/img/liff/35.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/35.jpg')">
+        </div>
+
+        <div class="col-sm-9">
+          <h4> จะเห็นว่าสามารถเข้าไปยังสินค้าชินนี้ได้และมีรายละเอียดให้ดู </h4>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-container>
+      <h4 style="text-align: center;"> ถ้าลิงค์ที่สร้างมาถูกต้องแล้ว สำหรับลิงค์แรก จะได้ดังรูป </h4>
+
+      <div class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/31.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/31.jpg')">
+
+          <img class="img-responsive" src="../../../assets/img/liff/32.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/32.jpg')">
+
+          <img class="img-responsive" src="../../../assets/img/liff/33.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/33.jpg')">
+
+          <img class="img-responsive" src="../../../assets/img/liff/34.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/34.jpg')">
+
+          <img class="img-responsive" src="../../../assets/img/liff/35.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/35.jpg')">
+        </div>
+
+        <div class="col-sm-9">
+          <h4 style="text-align: center;"> จะเห็นว่าสามารถเข้าไปยังสินค้าชิ้นนี้ได้และมีรายละเอียดให้ดู <br>
+            *** ในกรณีที่เคยล็อคอินแล้วจะเป็นดั่งรูป
+          </h4>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-container>
+      <h4 style="text-align: center;"> ถ้าลิงค์ที่สร้างมาถูกต้องแล้ว สำหรับลิงค์ที่2 (สินค้าทั้งหมด) จะได้ดังรูป </h4>
+
+      <div class="row">
+        <div class="col-sm-3">
+          <img class="img-responsive" src="../../../assets/img/liff/36.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/36.jpg')">
+
+          <img class="img-responsive" src="../../../assets/img/liff/37.jpg"
+            (click)="util.openViewImage('../../../assets/img/liff/37.jpg')">
+
+        </div>
+
+        <div class="col-sm-9">
+          <h4 style="text-align: center;"> จะเห็นว่าสามารถเข้าไปยังสินค้าทั้งหมดและเลือกซิ้อสินค้าได้ <br>
+            *** ในกรณีที่เคยล็อคอินแล้วจะเป็นดั่งรูป
+          </h4>
+        </div>
+      </div>
+    </ng-container>
+
+
+
+
+    <ng-container>
+      <div style="padding: 10px;">
+        <h2 style="text-align: center;"> เมื่อเสร็จข้างบนหมดแล้ว ทำให้นำค่าที่ได้มาใส่ในนี้ </h2>
+      </div>
+      <div style="text-align: center;">
+        <button *ngIf="selected !== 'กรุณาเลือก Shop'" (click)="openModalLiffAdd()">
+          เพิ่ม LIFF เมนูของ {{ selected === 'กรุณาเลือก Shop' ? '' :  selected }}
+        </button>
+      </div>
+
+
+      <hr>
+    </ng-container>
+
+
+
+
+
+
+  </ng-container>
+
+
+
+
+
+</section>
+
+<ngx-smart-modal #addShopOnlineModal identifier="addShopOnlineModal" [closable]="false" [dismissable]="false"
+  [escapable]="false">
+
+  <div style="padding: 10px;">
+    <h1 style="text-align: center;"> เพิ่มรายชื่อ Shop ติดปีก </h1>
+    <ng-container>
+      <div style="padding: 10px;">
+        <input list="brow" style="width: 50%;" [(ngModel)]="selectedShopOption">
+        <datalist id="brow">
+          <ng-container *ngFor="let item of shopName | keyvalue">
+            <ng-container>
+              <option value="{{ item.key }} : {{ item.value }}">
+            </ng-container>
+          </ng-container>
+        </datalist>
+      </div>
+
+
+    </ng-container>
+    <div style="padding-left: 20px;text-align: center;">
+      <h3>
+        ช็อป Remax ที่ได้ทำการเลือก
+
+      </h3>
+      <h4 style="color: blue;">
+        {{ selectedShopOption }}
+
+      </h4>
+      <!-- ไหนลองทดสอบนะ -->
+    </div>
+  </div>
+
+  <div>
+    <button style="float: right;" (click)="confirmAddShop();">
+      ยืนยัน
+    </button>
+  </div>
+
+  <div>
+    <button style="float: right;margin-right: 10px;" (click)="closeAddShopModal()">
+      ยกเลิก
+    </button>
+  </div>
+
+
+
+
+</ngx-smart-modal>
+
+
+<ngx-smart-modal #addLiffModal identifier="addLiffModal" [closable]="false" [dismissable]="false" [escapable]="false">
+
+  <div style="padding: 10px;">
+    <h1 style="text-align: center;"> เพิ่ม LIFF MENU สำหรับ SHOP <br> {{ selected }} </h1>
+
+    <h2 style="text-align: center;">
+      กรุณานำ Liff ID ที่ได้ ไปใส่ในฟอร์มค่ะ เช่น <br>
+      https://liff.line.me/1654037683-gzNQ7N7V <br>
+      เอาใส่แค่ 1654037683-gzNQ7N7V <br>
+
+      <p style="color: red;">*** ทำทั้ง 2 ลิงก์ค่ะ ลิงก์สินค้าแต่ละรายการ และ ลิงก์สินค้าทั้งหมด ที่ได้ทำมาลิงก์ที่ 1
+        และ 2 ตามลำดับ</p>
+
+    </h2>
+
+    <label> LIFF MENU สำหรับ แชร์สินค้ารายชิ้น (ที่ทำครั้งแรก) : </label>
+    <input type="text" style="width: 50%;" [(ngModel)]="inputLiff.detail">
+
+    <br>
+    <label> LIFF MENU สำหรับ แชร์สินค้าทั้งหมด (ที่ทำครั้งที่ 2 ) : </label>
+    <input type="text" style="width: 50%;" [(ngModel)]="inputLiff.product">
+
+
+
+  </div>
+
+
+
+
+  <div>
+    <button style="float: right;" (click)="confirmAddLiff();">
+      ยืนยัน
+    </button>
+  </div>
+
+  <div>
+    <button style="float: right;margin-right: 10px;" (click)="closeAddLiffModal()">
+      ยกเลิก
+    </button>
+  </div>
+
+
+
+
+</ngx-smart-modal>

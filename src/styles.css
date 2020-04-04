@@ -1,0 +1,27 @@
+@import '~ngx-smart-modal/ngx-smart-modal';
+
+
+body { font-family: 'Niramit', sans-serif }
+
+.content-header h1 { white-space: nowrap; }
+.content { padding: 10px }
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.dropdown-grey{
+  color: grey;
+  cursor: context-menu;
+
+}
+
+.dropdown-grey:hover {
+  background-color: #007bff;
+}
+
+.nsm-dialog,nsm-dialog-animatio {
+  max-width: 90%;
+}
